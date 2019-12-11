@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { run } from '..';
+import { greeting, congrats } from '..';
 
-run();
+greeting();
 
-console.log('haha');
+congrats();

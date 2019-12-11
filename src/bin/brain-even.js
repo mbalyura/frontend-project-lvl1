@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import { run, oddOrEven } from '..';
+import { greeting, congrats, oddOrEven } from '..';
 
-run();
+greeting();
 
 oddOrEven();
+
+congrats();
