@@ -4,7 +4,7 @@ const getUserInput = readlineSync.question;
 
 let userName;
 
-const getRandNum = () => Math.ceil(Math.random() * 100);
+const getRandNum = (r) => Math.floor(Math.random() * r);
 
 const greeting = () => {
   console.log('---------------------------\nWelcome to the Brain Games!\n---------------------------');
@@ -18,23 +18,23 @@ const congrats = () => {
 
 const run = (rules, question, correctAnswer) => {
   let correctAnswerCount = 0;
-
   console.log(rules);
 
   while (correctAnswerCount < 3) {
-    const number1 = getRandNum();
-    const number2 = getRandNum();
-    const operation = '+-*'[Math.floor(Math.random() * 3)];
+    const n1 = getRandNum(100);
+    const n2 = getRandNum(10);
+    const operation = '+-*'[getRandNum(3)];
+    const position = getRandNum(10);
 
-    question(number1, number2, operation);
+    question(n1, n2, operation, position);
 
     const answer = getUserInput('Your answer: ');
 
-    if (String(correctAnswer(number1, number2, operation)) === answer) {
+    if (String(correctAnswer(n1, n2, operation, position)) === answer) {
       console.log(`Correct, ${userName}!`);
       correctAnswerCount += 1;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer(number1, number2, operation)}'.`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer(n1, n2, operation, position)}'.`);
       correctAnswerCount = 0;
     }
   }
