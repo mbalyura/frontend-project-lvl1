@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import { greeting, congrats, calculator } from '..';
-
-greeting();
+import calculator from '../games/calculator';
 
 calculator();
-
-congrats();

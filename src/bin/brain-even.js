@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-import { greeting, congrats, oddOrEven } from '..';
-
-greeting();
+import oddOrEven from '../games/oddOrEven';
 
 oddOrEven();
-
-congrats();

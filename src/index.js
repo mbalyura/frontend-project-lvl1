@@ -4,7 +4,6 @@ const getUserInput = readlineSync.question;
 
 let userName;
 
-const isEven = (n) => n % 2 === 0;
 const getRandNum = () => Math.ceil(Math.random() * 100);
 
 const greeting = () => {
@@ -17,45 +16,21 @@ const congrats = () => {
   console.log(`\nYou win! \nCongratulations, ${userName}!`);
 };
 
-const oddOrEven = () => {
+const run = (rules, question, correctAnswer) => {
   let correctAnswerCount = 0;
-  const correctAnswer = (n) => (isEven(n) ? 'yes' : 'no');
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  while (correctAnswerCount < 3) {
-    const number = getRandNum();
-    console.log('\nQuestion:', number);
-    const answer = getUserInput('Your answer: ');
-
-    if (correctAnswer(number) === answer) {
-      console.log(`Correct, ${userName}!`);
-      correctAnswerCount += 1;
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer(number)}'.`);
-      correctAnswerCount = 0;
-    }
-  }
-};
-
-const calculator = () => {
-  let correctAnswerCount = 0;
-  const correctAnswer = (n1, n2, operation) => {
-    if (operation === '+') return String(n1 + n2);
-    if (operation === '-') return String(n1 - n2);
-    return String(n1 * n2);
-  };
-
-  console.log('What is the result of the expression?');
+  console.log(rules);
 
   while (correctAnswerCount < 3) {
     const number1 = getRandNum();
     const number2 = getRandNum();
     const operation = '+-*'[Math.floor(Math.random() * 3)];
-    console.log(number1, operation, number2);
+
+    question(number1, number2, operation);
+
     const answer = getUserInput('Your answer: ');
 
-    if (correctAnswer(number1, number2, operation) === answer) {
+    if (String(correctAnswer(number1, number2, operation)) === answer) {
       console.log(`Correct, ${userName}!`);
       correctAnswerCount += 1;
     } else {
@@ -66,5 +41,5 @@ const calculator = () => {
 };
 
 export {
-  greeting, congrats, oddOrEven, calculator,
+  greeting, congrats, run,
 };
