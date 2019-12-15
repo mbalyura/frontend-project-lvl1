@@ -15,10 +15,11 @@ const run = (rules, question, correctAnswer) => {
   // game rules
   console.log(rules);
 
+  // start game
   let correctAnswerCount = 0;
   while (correctAnswerCount < 3) {
     const num1 = getRandNum(100);
-    const num2 = getRandNum(9) + 1;
+    const num2 = getRandNum(10);
     const operation = '+-*'[getRandNum(3)];
     const position = getRandNum(10);
 
