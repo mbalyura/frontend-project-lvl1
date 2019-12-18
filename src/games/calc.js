@@ -1,13 +1,20 @@
-import run from '..';
+import { run, getRandNum } from '..';
 
 const rules = 'What is the result of the expression?';
 
-const question = (n1, n2, operation) => [n1, operation, n2];
-
-const correctAnswer = (n1, n2, operation) => {
-  if (operation === '+') return `${n1 + n2}`;
-  if (operation === '-') return `${n1 - n2}`;
-  return `${n1 * n2}`;
+const calculator = (num1, operation, num2) => {
+  if (operation === '+') return `${num1 + num2}`;
+  if (operation === '-') return `${num1 - num2}`;
+  return `${num1 * num2}`;
 };
 
-export default () => run(rules, question, correctAnswer);
+const questionAndAnswer = () => {
+  const num1 = getRandNum(10);
+  const num2 = getRandNum(10);
+  const operation = '+-*'[getRandNum(3)];
+  const question = [num1, operation, num2];
+  const correctAnswer = calculator(num1, operation, num2);
+  return [question, correctAnswer];
+};
+
+export default () => run(rules, questionAndAnswer);

@@ -1,11 +1,12 @@
-import run from '..';
+import { run, getRandNum } from '..';
 
 const rules = 'What number is missing in the progression?';
 
 const progression = (start, step, position) => {
   const res = [];
+  const progressionLength = 10;
   let el = start;
-  while (res.length < 10) {
+  while (res.length < progressionLength) {
     res.push(el);
     el += step;
   }
@@ -13,8 +14,13 @@ const progression = (start, step, position) => {
   return res;
 };
 
-const question = (n1, n2, _o, position) => progression(n1, n2, position);
+const questionAndAnswer = () => {
+  const start = getRandNum(100);
+  const step = getRandNum(10);
+  const position = getRandNum(10);
+  const question = progression(start, step, position);
+  const correctAnswer = `${step * position + start}`;
+  return [question, correctAnswer];
+};
 
-const correctAnswer = (n1, n2, _o, position) => `${n2 * position + n1}`;
-
-export default () => run(rules, question, correctAnswer);
+export default () => run(rules, questionAndAnswer);
