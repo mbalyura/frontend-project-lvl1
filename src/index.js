@@ -16,8 +16,7 @@ const run = (rules, question, correctAnswer) => {
   console.log(rules);
 
   // start game
-  let correctAnswerCount = 0;
-  while (correctAnswerCount < 3) {
+  for (let correctAnswerCount = 0; correctAnswerCount < 3;) {
     const num1 = getRandNum(100);
     const num2 = getRandNum(10);
     const operation = '+-*'[getRandNum(3)];

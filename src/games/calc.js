@@ -1,6 +1,6 @@
 import run from '..';
 
-const rules = '\nWhat is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
 const question = (n1, n2, operation) => [n1, operation, n2];
 

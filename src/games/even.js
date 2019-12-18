@@ -1,9 +1,11 @@
 import run from '..';
 
-const rules = '\nAnswer "yes" if the number is even, otherwise answer "no".';
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const question = (n) => [n];
 
-const correctAnswer = (n) => (n % 2 === 0 ? 'yes' : 'no');
+const isEven = (n) => n % 2 === 0;
+
+const correctAnswer = (n) => (isEven(n) ? 'yes' : 'no');
 
 export default () => run(rules, question, correctAnswer);

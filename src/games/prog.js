@@ -1,6 +1,6 @@
 import run from '..';
 
-const rules = '\nWhat number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 
 const progression = (start, step, position) => {
   const res = [];

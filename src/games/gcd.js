@@ -1,6 +1,6 @@
 import run from '..';
 
-const rules = '\nFind the greatest common divisor of given numbers:';
+const rules = 'Find the greatest common divisor of given numbers:';
 
 const question = (n1, n2) => [n1, n2];
 

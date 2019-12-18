@@ -1,6 +1,6 @@
 import run from '..';
 
-const rules = '\nAnswer "yes" if the number is prime, otherwise answer "no".';
+const rules = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const question = (n) => [n];
 
