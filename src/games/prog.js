@@ -1,12 +1,12 @@
-import { run, getRandNum } from '..';
+import run from '..';
+import getRandNum from '../utils';
 
 const rules = 'What number is missing in the progression?';
 
-const progression = (start, step, position) => {
+const progression = (start, step, position, length) => {
   const res = [];
-  const progressionLength = 10;
   let el = start;
-  while (res.length < progressionLength) {
+  while (res.length < length) {
     res.push(el);
     el += step;
   }
@@ -14,11 +14,15 @@ const progression = (start, step, position) => {
   return res;
 };
 
+const startFactor = 100;
+const stepFactor = 10;
+const progLength = 10;
+
 const questionAndAnswer = () => {
-  const start = getRandNum(100);
-  const step = getRandNum(10);
-  const position = getRandNum(10);
-  const question = progression(start, step, position);
+  const start = getRandNum(startFactor);
+  const step = getRandNum(stepFactor);
+  const position = getRandNum(progLength);
+  const question = progression(start, step, position, progLength);
   const correctAnswer = `${step * position + start}`;
   return [question, correctAnswer];
 };
