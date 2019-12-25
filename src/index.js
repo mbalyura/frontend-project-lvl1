@@ -1,14 +1,16 @@
 import * as getUserInput from 'readline-sync';
 
-const run = (rules, questionAndAnswer) => {
+const run = (gameDescription, getQuestionAndAnswer) => {
   console.log('---------------------------\nWelcome to the Brain Games!\n---------------------------');
   const userName = getUserInput.question('\nMay I have your name? ');
   console.log(`\nHi, ${userName}!`);
 
-  console.log(rules);
+  console.log(gameDescription);
 
-  for (let roundCount = 1; roundCount <= 3; roundCount += 1) {
-    const [question, correctAnswer] = questionAndAnswer();
+  const roundMaxCount = 3;
+
+  for (let roundCount = 1; roundCount <= roundMaxCount; roundCount += 1) {
+    const [question, correctAnswer] = getQuestionAndAnswer();
 
     console.log('\nQuestion: ', ...question);
 
@@ -19,10 +21,10 @@ const run = (rules, questionAndAnswer) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      break;
+      return;
     }
-    if (roundCount === 3) console.log(`\nYou win! Congratulations, ${userName}!`);
   }
+  console.log(`\nYou win! Congratulations, ${userName}!`);
 };
 
 export default run;

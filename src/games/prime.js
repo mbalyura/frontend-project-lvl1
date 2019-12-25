@@ -1,7 +1,7 @@
 import run from '..';
 import getRandNum from '../utils';
 
-const rules = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const gameDescription = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
 const isPrime = (n) => {
   if (n <= 1) return false;
@@ -13,11 +13,11 @@ const isPrime = (n) => {
 
 const numFactor = 100;
 
-const questionAndAnswer = () => {
+const getQuestionAndAnswer = () => {
   const num = getRandNum(numFactor);
   const question = [num];
   const correctAnswer = (isPrime(num) ? 'yes' : 'no');
   return [question, correctAnswer];
 };
 
-export default () => run(rules, questionAndAnswer);
+export default () => run(gameDescription, getQuestionAndAnswer);
