@@ -1,5 +1,5 @@
 import run from '..';
-import getRandNum from '../utils';
+import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
 
@@ -12,19 +12,17 @@ const calculator = (num1, operation, num2) => {
     case '*':
       return num1 * num2;
     default:
-      return 42;
+      return false;
   }
 };
 
 const operations = '+-*';
-const getRandOperation = (ops) => ops[getRandNum(operations.length)];
-const numFactor = 10;
 
 const getQuestionAndAnswer = () => {
-  const num1 = getRandNum(numFactor);
-  const num2 = getRandNum(numFactor);
-  const operation = getRandOperation(operations);
-  const question = [num1, operation, num2];
+  const num1 = getRandomIntegerFromRange(1, 100);
+  const num2 = getRandomIntegerFromRange(5, 20);
+  const operation = operations[getRandomIntegerFromRange(0, operations.length - 1)];
+  const question = `${num1} ${operation} ${num2}`;
   const correctAnswer = String(calculator(num1, operation, num2));
   return [question, correctAnswer];
 };

@@ -7,12 +7,12 @@ const run = (gameDescription, getQuestionAndAnswer) => {
 
   console.log(gameDescription);
 
-  const roundMaxCount = 3;
+  const maxRoundCount = 3;
 
-  for (let roundCount = 1; roundCount <= roundMaxCount; roundCount += 1) {
+  for (let roundCount = 1; roundCount <= maxRoundCount; roundCount += 1) {
     const [question, correctAnswer] = getQuestionAndAnswer();
 
-    console.log('\nQuestion: ', ...question);
+    console.log('\nQuestion: ', question);
 
     const userAnswer = getUserInput.question('Your answer: ');
 

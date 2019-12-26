@@ -1,5 +1,5 @@
 import run from '..';
-import getRandNum from '../utils';
+import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'What number is missing in the progression?';
 
@@ -11,17 +11,15 @@ const progression = (start, step, position, length) => {
     element += step;
   }
   result[position] = '..';
-  return result;
+  return result.join(' ');
 };
 
-const startFactor = 100;
-const stepFactor = 10;
 const progLength = 10;
 
 const getQuestionAndAnswer = () => {
-  const start = getRandNum(startFactor);
-  const step = getRandNum(stepFactor);
-  const position = getRandNum(progLength);
+  const start = getRandomIntegerFromRange(1, 100);
+  const step = getRandomIntegerFromRange(5, 50);
+  const position = getRandomIntegerFromRange(1, 10);
   const question = progression(start, step, position, progLength);
   const correctAnswer = String(step * position + start);
   return [question, correctAnswer];

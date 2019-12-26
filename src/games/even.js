@@ -1,16 +1,13 @@
 import run from '..';
-import getRandNum from '../utils';
+import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (n) => n % 2 === 0;
 
-const numFactor = 100;
-
 const getQuestionAndAnswer = () => {
-  const num = getRandNum(numFactor);
-  const question = [num];
-  const correctAnswer = (isEven(num) ? 'yes' : 'no');
+  const question = getRandomIntegerFromRange(1, 100);
+  const correctAnswer = (isEven(question) ? 'yes' : 'no');
   return [question, correctAnswer];
 };
 

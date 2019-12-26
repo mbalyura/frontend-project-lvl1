@@ -1,5 +1,5 @@
 import run from '..';
-import getRandNum from '../utils';
+import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
@@ -11,12 +11,9 @@ const isPrime = (n) => {
   return true;
 };
 
-const numFactor = 100;
-
 const getQuestionAndAnswer = () => {
-  const num = getRandNum(numFactor);
-  const question = [num];
-  const correctAnswer = (isPrime(num) ? 'yes' : 'no');
+  const question = getRandomIntegerFromRange(1, 100);
+  const correctAnswer = (isPrime(question) ? 'yes' : 'no');
   return [question, correctAnswer];
 };
 
