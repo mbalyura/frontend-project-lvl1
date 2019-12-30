@@ -3,7 +3,7 @@ import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'What is the result of the expression?';
 
-const calculator = (num1, operation, num2) => {
+const calculate = (num1, operation, num2) => {
   switch (operation) {
     case '+':
       return num1 + num2;
@@ -23,7 +23,7 @@ const getQuestionAndAnswer = () => {
   const num2 = getRandomIntegerFromRange(5, 20);
   const operation = operations[getRandomIntegerFromRange(0, operations.length - 1)];
   const question = `${num1} ${operation} ${num2}`;
-  const correctAnswer = String(calculator(num1, operation, num2));
+  const correctAnswer = String(calculate(num1, operation, num2));
   return [question, correctAnswer];
 };
 

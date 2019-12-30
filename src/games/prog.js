@@ -3,24 +3,22 @@ import getRandomIntegerFromRange from '../utils';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const progression = (start, step, position, length) => {
+const getProgressionWithHiddenElement = (start, step, position, length) => {
   const result = [];
-  let element = start;
-  while (result.length < length) {
+  for (let element = start; result.length < length; element += step) {
     result.push(element);
-    element += step;
   }
   result[position] = '..';
   return result.join(' ');
 };
 
-const progLength = 10;
+const progressionLength = 10;
 
 const getQuestionAndAnswer = () => {
   const start = getRandomIntegerFromRange(1, 100);
   const step = getRandomIntegerFromRange(5, 50);
-  const position = getRandomIntegerFromRange(1, 10);
-  const question = progression(start, step, position, progLength);
+  const position = getRandomIntegerFromRange(1, progressionLength);
+  const question = getProgressionWithHiddenElement(start, step, position, progressionLength);
   const correctAnswer = String(step * position + start);
   return [question, correctAnswer];
 };
