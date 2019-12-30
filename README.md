@@ -40,4 +40,4 @@ $ brain-prime
 ```
 Игра: "Простое ли число?". Ответ 'yes' если выведенное число простое, 'no' если нет.
 
-[![asciicast](https://asciinema.org/a/709KFPtKkhU94GXJxL33q0mXa.svg)](https://asciinema.org/a/709KFPtKkhU94GXJxL33q0mXa)
+[![asciicast](https://asciinema.org/a/6K7E8Jyym4MrCeqb8COPMlASV.svg)](https://asciinema.org/a/6K7E8Jyym4MrCeqb8COPMlASV)
