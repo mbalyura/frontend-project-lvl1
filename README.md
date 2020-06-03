@@ -1,8 +1,5 @@
-# Brain Games - набор мини-игр. NodeJS education project.
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/7d82d42ddaee054f3f9f/maintainability)](https://codeclimate.com/github/mbalyura/frontend-project-lvl1/maintainability)
-
-[![Build Status](https://travis-ci.org/mbalyura/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/mbalyura/frontend-project-lvl1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7d82d42ddaee054f3f9f/maintainability)](https://codeclimate.com/github/mbalyura/frontend-project-lvl1/maintainability) [![Build Status](https://travis-ci.org/mbalyura/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/mbalyura/frontend-project-lvl1)
+# Brain Games - набор мини-игр.
 
 ### Установка
 
